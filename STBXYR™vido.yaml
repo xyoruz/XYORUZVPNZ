@@ -43,8 +43,9 @@ rules:
 proxy-groups:
 - name: AKUN
   type: select
-  disable-udp: false
-  use:
+  url: http://www.gstatic.com/generate_204
+  interval: '300'
+  proxies:
   - AKUN
 - name: rule_BlockAds
   type: select
@@ -105,7 +106,7 @@ proxy-groups:
 proxy-providers:
   AKUN:
     type: http
-    behavior: domain
+    behavior: classical
     url: https://raw.githubusercontent.com/xyoruz/XYORUZVPNZ/main/rule_AKUN.yaml
     path: "./rule_AKUN.yaml"
     interval: 86400
