@@ -104,12 +104,11 @@ proxy-groups:
   - AKUN
 proxy-providers:
   AKUN:
-    type: file
-    path: "./proxy_provider/akun.yaml"
-    health-check:
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 60
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/xyoruz/XYORUZVPNZ/main/rule_AKUN.yaml
+    path: "./rule_AKUN.yaml"
+    interval: 86400
 rule-providers:
   speedtest:
     type: http
