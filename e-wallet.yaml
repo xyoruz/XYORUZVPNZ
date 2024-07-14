@@ -1,0 +1,47 @@
+payload:  
+#=================================================#
+ #                 Rule MBanking                 #
+#=================================================#
+ #BCA
+  - DOMAIN-SUFFIX,klikbca.com
+  - DOMAIN-KEYWORD,klikbca
+  - DST-PORT,33303
+ #BRI (BRI Link,  BRImo, BRIcredit)
+  - DOMAIN-SUFFIX,bri.co.id
+  - DOMAIN-KEYWORD,bri
+ #Mandiri
+  - DOMAIN-SUFFIX,bankmandiri.co.id
+  - DOMAIN-KEYWORD,mandiri
+  - DOMAIN-KEYWORD,livin
+ #Muamalat
+  - DOMAIN-SUFFIX,bankmuamalat.co.id
+ #BNI
+  - DOMAIN-SUFFIX,bni.co.id
+  - DOMAIN-KEYWORD,bni
+
+#=================================================#
+ #                  Rule E-Wallet                #
+#=================================================#
+ #Go-Pay [Go-Jek]
+  - DOMAIN-SUFFIX,gojek.com
+  - DOMAIN-SUFFIX,gojekapi.com
+  - DOMAIN-KEYWORD,gopay
+ #OVO
+  - DOMAIN-SUFFIX,ovo.id
+  - DOMAIN-KEYWORD,ovo
+ #LinkAja
+  - DOMAIN-SUFFIX,linkaja.com
+  - DOMAIN-KEYWORD,linkaja
+ #Dana
+  - DOMAIN-SUFFIX,split.io
+  - DOMAIN-SUFFIX,dana.id
+  - DOMAIN-SUFFIX,innov8.id
+ #Doku
+  - DOMAIN-SUFFIX,dokuwallet.com
+    - DOMAIN-KEYWORD,doku
+#Flip
+  - DOMAIN-SUFFIX,flip.id
+  - DOMAIN-SUFFIX,flipid.zendesk.com
+  - DOMAIN-KEYWORD,flip
+  - DOMAIN-KEYWORD,nexus-websocket-a.intercom.io
+  - DOMAIN-KEYWORD,mobile-sdk-api.intercom.io
