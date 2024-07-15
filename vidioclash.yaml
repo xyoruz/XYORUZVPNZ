@@ -105,7 +105,7 @@ proxy-groups:
   - name: Gaming
     type: select
     url: http://www.gstatic.com/generate_204
-    interval: 300
+    interval: 200
     proxies:
       - trojan
       - ID
