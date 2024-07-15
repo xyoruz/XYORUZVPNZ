@@ -78,13 +78,6 @@ proxy-groups:
       - WhatsApp
       - komik
       - speedtest
-  - name: FALLBACK
-    type: fallback
-    url: http://hi.bonds.id/ping
-    interval: 300
-    proxies:
-      - trojan
-      - ID
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
@@ -161,8 +154,8 @@ rule-providers:
   BlockAds:
     type: http
     behavior: domain
-    url: https://raw.githubusercontent.com/xyoruz/XYORUZVPNZ/main/rule_BlockAds.yaml
-    path: ".rule_BlockAds.yaml"
+    url: https://raw.githubusercontent.com/xyoruz/XYORUZVPNZ/main/Adsblock.yaml
+    path: ".Adsblock.yaml"
     interval: 86400
   komik:
     type: http
