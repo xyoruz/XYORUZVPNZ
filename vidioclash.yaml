@@ -45,13 +45,31 @@ proxies:
       path: /
       headers:
         Host: quiz.int.vidio.com.sg.xyoruz.my.id
-    udp: true  
+    udp: true 
+    
+  - name: VIDI
+    server: sg3.socifiles.com
+    port: 443
+    type: vmess
+    uuid: 615aa140-4257-11ef-90e9-1239d0255272
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sg3.socifiles.com
+    network: ws
+    ws-opts:
+      path: /vmws
+      headers:
+        Host: sg3.socifiles.com
+    udp: true
     
 proxy-groups:
   - name: MENU-BY-XYRVPN
     type: select
     proxies:
       - trojan
+      - VIDI
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,6 +88,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - VIDI
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
@@ -77,18 +96,21 @@ proxy-groups:
     tolerance: 50
     proxies:
       - trojan
+      - VIDI
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
       - trojan
+      - VIDI
   - name: Indo
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
       - trojan
+      - VIDI
       - DIRECT
   - name: Gaming
     type: select
@@ -96,6 +118,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - VIDI
       - DIRECT
   - name: Streaming
     type: select
@@ -103,6 +126,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - VIDI
       - DIRECT
   - name: Sosmed
     type: select
@@ -110,6 +134,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - VIDI
       - DIRECT
   - name: WhatsApp
     type: select
@@ -117,6 +142,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - VIDI
       - DIRECT
   - name: komik
     type: select
@@ -124,6 +150,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - VIDI
       - DIRECT
   - name: speedtest
     type: select
@@ -131,6 +158,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - VIDI
       - DIRECT
 rule-providers:
   komik:
