@@ -69,7 +69,6 @@ proxy-groups:
       - trojan
       - ID
       - BlockAds
-      - LOAD-BALANCE
       - BEST-PING
       - Indo
       - Gaming
