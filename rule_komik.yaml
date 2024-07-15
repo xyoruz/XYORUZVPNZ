@@ -34,6 +34,7 @@ payload:
   - DOMAIN-KEYWORD,komikcast
   - DOMAIN-SUFFIX,komikcast.lol
   - DOMAIN-SUFFIX,komikindo.id
+  - DOMAIN-SUFFIX,komikcast.cz
   - DOMAIN-SUFFIX,alceascan.my.id
   - DOMAIN-SUFFIX,bacakomik.co
   - DOMAIN-SUFFIX,boosei.net
