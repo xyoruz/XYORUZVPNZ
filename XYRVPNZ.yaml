@@ -33,21 +33,7 @@ dns:
     - 112.215.203.254
 proxies:
  
-  - name: trojan
-    server: 104.22.4.240
-    port: 443
-    type: trojan
-    password: XYORUZVPN
-    skip-cert-verify: true
-    sni: quiz.int.vidio.com.sg.xyoruz.my.id
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: quiz.int.vidio.com.sg.xyoruz.my.id
-    udp: true 
-    
-  - name: ID
+  - name: SG
     server: 104.20.244.135
     port: 443
     type: trojan
@@ -56,18 +42,17 @@ proxies:
     sni: quiz.staging.vidio.com.xyoruzteam.biz.id
     network: ws
     ws-opts:
-      path: /trojan-ws
+      path: /
       headers:
         Host: quiz.staging.vidio.com.xyoruzteam.biz.id
-    udp: true
+    udp: true 
     
 proxy-groups:
   - name: MENU-BY-XYRVPN
     type: select
     proxies:
       - DIRECT
-      - trojan
-      - ID
+      - SG
       - BlockAds
       - LOAD-BALANCE
       - BEST-PING
@@ -84,78 +69,69 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - trojan
+      - SG
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - trojan
-      - ID
+      - SG
   - name: BlockAds
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - trojan
-      - ID
+      - SG
       - DIRECT
   - name: Indo
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - trojan
-      - ID
+      - SG
       - DIRECT
   - name: Gaming
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 200
     proxies:
-      - trojan
-      - ID
+      - SG
       - DIRECT
   - name: Streaming
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - trojan
-      - ID
+      - SG
       - DIRECT
   - name: Sosmed
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - trojan
-      - ID
+      - SG
       - DIRECT
   - name: WhatsApp
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - trojan
-      - ID
+      - SG
       - DIRECT
   - name: komik
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - trojan
-      - ID
+      - SG
       - DIRECT
   - name: speedtest
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - trojan
-      - ID
+      - SG
       - DIRECT
 rule-providers:
   BlockAds:
