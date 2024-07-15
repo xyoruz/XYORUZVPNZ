@@ -1,0 +1,187 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+ 
+  - name: trojan
+    server: 104.22.4.240
+    port: 443
+    type: trojan
+    password: XYORUZVPN
+    skip-cert-verify: true
+    sni: quiz.int.vidio.com.sg.xyoruz.my.id
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: quiz.int.vidio.com.sg.xyoruz.my.id
+    udp: true  
+    
+proxy-groups:
+  - name: MENU-BY-XYRVPN
+    type: select
+    proxies:
+      - trojan
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+      - Indo
+      - Gaming
+      - Streaming
+      - Sosmed
+      - WhatsApp
+      - komik
+      - speedtest
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - trojan
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - trojan
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - trojan
+  - name: Indo
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - trojan
+      - DIRECT
+  - name: Gaming
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - trojan
+      - DIRECT
+  - name: Streaming
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - trojan
+      - DIRECT
+  - name: Sosmed
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - trojan
+      - DIRECT
+  - name: WhatsApp
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - trojan
+      - DIRECT
+  - name: komik
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - trojan
+      - DIRECT
+  - name: speedtest
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - trojan
+      - DIRECT
+rule-providers:
+  komik:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/xyoruz/XYORUZVPNZ/main/rule_komik.yaml
+    path: ".rule_komik.yaml"
+    interval: 86400
+  WhatsApp:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/xyoruz/XYORUZVPNZ/main/rule_whatsapp.yaml
+    path: "./rule_whatsapp.yaml"
+    interval: 86400
+  speedtest:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/malikshi/clash_for_android/main/rule_provider/rule_speedtest.yaml
+    path: "./rule_speedtest.yaml.yaml"
+    interval: 86400
+  Sosmed:
+    type: http
+    behavior: classical
+    path: "./rule_sosmed.yaml"
+    url: https://raw.githubusercontent.com/malikshi/clash_for_android/main/rule_provider/rule_sosmed.yaml
+    interval: 86400
+  Gaming:
+    type: http
+    behavior: classical
+    path: "./rule_gaming.yaml"
+    url: https://raw.githubusercontent.com/malikshi/clash_for_android/main/rule_provider/rule_gaming.yaml
+    interval: 86400
+  Indo:
+    type: http
+    behavior: classical
+    path: "./rule_Indo.yaml"
+    url: https://raw.githubusercontent.com/xyoruz/XYORUZVPNZ/main/rule_Indo.yaml
+    interval: 86400
+  Streaming:
+    type: http
+    behavior: classical
+    path: "./rule_streaming.yaml"
+    url: https://raw.githubusercontent.com/malikshi/clash_for_android/main/rule_provider/rule_streaming.yaml
+    interval: 86400
+rules:
+  - MATCH,Indo
+  - MATCH,Gaming
+  - MATCH,Sosmed
+  - MATCH,speedtest
+  - MATCH,Streaming
+  - MATCH,WhatsApp
+  - MATCH,komik
+  - MATCH,MENU-BY-XYRVPN
+  - MATCH,speedtest
