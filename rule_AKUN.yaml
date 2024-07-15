@@ -13,16 +13,3 @@ proxies:
         Host: img.email3.vidio.com.xyoruzteam.biz.id
     udp: true
     
-  - name: trojan
-    server: 104.22.4.240
-    port: 443
-    type: trojan
-    password: XYORUZVPN
-    skip-cert-verify: true
-    sni: quiz.int.vidio.com.sg.xyoruz.my.id
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: quiz.int.vidio.com.sg.xyoruz.my.id
-    udp: true
