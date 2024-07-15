@@ -8,6 +8,41 @@ payload:
   - DOMAIN-SUFFIX,world.honorofkings.com
   - DOMAIN-SUFFIX,wuji.honorofkings.com
   - DOMAIN-SUFFIX,www.honorofkings.com
+  - DOMAIN-SUFFIX,cloud-control.sgameglobal.com
+  - DOMAIN-SUFFIX,zga.globalconnetct.com
+  # TCP
+  - DST-PORT,5692
+  - DST-PORT,8085
+  - DST-PORT,8500
+  - DST-PORT,10000
+  - DST-PORT,10018
+  - DST-PORT,10046
+  - DST-PORT,10053
+  - DST-PORT,10064
+  - DST-PORT,10082
+  - DST-PORT,12346
+  - DST-PORT,20000
+  - DST-PORT,20002
+  - DST-PORT,25000
+  - DST-PORT,29134
+  - DST-PORT,31003
+
+  # UDP
+  - DST-PORT,5010
+  - DST-PORT,6650
+  - DST-PORT,6651
+  - DST-PORT,6652
+  - DST-PORT,6653
+  - DST-PORT,6654
+  - DST-PORT,6655
+  - DST-PORT,6656
+  - DST-PORT,6657
+  - DST-PORT,6658
+  - DST-PORT,6659
+  - DST-PORT,8011
+  - DST-PORT,8700
+  - DST-PORT,30000
+
   #MBLBB
   - PROCESS-NAME,com.mobile.legends
   - DOMAIN-SUFFIX,mobilelegends.com
