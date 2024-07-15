@@ -47,7 +47,7 @@ proxies:
         Host: quiz.int.vidio.com.sg.xyoruz.my.id
     udp: true 
     
-  - name: trojan
+  - name: ID
     server: 104.20.244.135
     port: 443
     type: trojan
@@ -65,11 +65,12 @@ proxy-groups:
   - name: MENU-BY-XYRVPN
     type: select
     proxies:
+      - DIRECT
       - trojan
+      - ID
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
-      - DIRECT
       - Indo
       - Gaming
       - Streaming
@@ -84,6 +85,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - ID
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
@@ -91,18 +93,21 @@ proxy-groups:
     tolerance: 50
     proxies:
       - trojan
+      - ID
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
       - trojan
+      - ID
   - name: Indo
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
       - trojan
+      - ID
       - DIRECT
   - name: Gaming
     type: select
@@ -110,6 +115,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - ID
       - DIRECT
   - name: Streaming
     type: select
@@ -117,6 +123,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - ID
       - DIRECT
   - name: Sosmed
     type: select
@@ -124,6 +131,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - ID
       - DIRECT
   - name: WhatsApp
     type: select
@@ -131,6 +139,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - ID
       - DIRECT
   - name: komik
     type: select
@@ -138,6 +147,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - ID
       - DIRECT
   - name: speedtest
     type: select
@@ -145,6 +155,7 @@ proxy-groups:
     interval: 300
     proxies:
       - trojan
+      - ID
       - DIRECT
 rule-providers:
   komik:
