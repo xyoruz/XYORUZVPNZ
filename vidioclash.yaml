@@ -78,14 +78,13 @@ proxy-groups:
       - WhatsApp
       - komik
       - speedtest
-  - name: BlockAds
-    type: select
-    url: http://www.gstatic.com/generate_204
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
     interval: 300
     proxies:
       - trojan
       - ID
-      - DIRECT
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
@@ -94,6 +93,14 @@ proxy-groups:
     proxies:
       - trojan
       - ID
+  - name: BlockAds
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - trojan
+      - ID
+      - DIRECT
   - name: Indo
     type: select
     url: http://www.gstatic.com/generate_204
@@ -209,3 +216,4 @@ rules:
   - MATCH,komik
   - MATCH,MENU-BY-XYRVPN
   - MATCH,speedtest
+  - MATCH,BlockAds
