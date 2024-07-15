@@ -1,6 +1,13 @@
 payload:
   - DOMAIN-SUFFIX,
   # Mulai baris ini kebawah bisa di edit/hapus
+  # HONOROFKINGS
+  - PROCESS-NAME,com,honorofkings 
+  - DOMAIN-SUFFIX,honorofkings.com
+  - DOMAIN-SUFFIX,pre.honorofkings.com
+  - DOMAIN-SUFFIX,world.honorofkings.com
+  - DOMAIN-SUFFIX,wuji.honorofkings.com
+  - DOMAIN-SUFFIX,www.honorofkings.com
   #MBLBB
   - PROCESS-NAME,com.mobile.legends
   - DOMAIN-SUFFIX,mobilelegends.com
