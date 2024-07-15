@@ -68,9 +68,9 @@ proxy-groups:
       - DIRECT
       - trojan
       - ID
+      - BlockAds
       - LOAD-BALANCE
       - BEST-PING
-      - FALLBACK
       - Indo
       - Gaming
       - Streaming
@@ -78,26 +78,18 @@ proxy-groups:
       - WhatsApp
       - komik
       - speedtest
-  - name: LOAD-BALANCE
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://hi.bonds.id/ping
+  - name: BlockAds
+    url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
       - trojan
       - ID
+      - DIRECT
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
-    proxies:
-      - trojan
-      - ID
-  - name: FALLBACK
-    type: fallback
-    url: http://hi.bonds.id/ping
-    interval: 300
     proxies:
       - trojan
       - ID
@@ -158,6 +150,12 @@ proxy-groups:
       - ID
       - DIRECT
 rule-providers:
+  BlockAds:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/xyoruz/XYORUZVPNZ/main/rule_BlockAds.yaml
+    path: ".rule_BlockAds.yaml"
+    interval: 86400
   komik:
     type: http
     behavior: domain
