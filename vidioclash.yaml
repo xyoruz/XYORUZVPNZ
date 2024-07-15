@@ -48,7 +48,7 @@ proxies:
     udp: true 
     
   - name: VIDI
-    server: sg3.socifiles.com
+    server: quiz.int.vidio.com
     port: 443
     type: vmess
     uuid: 615aa140-4257-11ef-90e9-1239d0255272
