@@ -47,6 +47,20 @@ proxies:
         Host: quiz.int.vidio.com.sg.xyoruz.my.id
     udp: true 
     
+  - name: trojan
+    server: 104.20.244.135
+    port: 443
+    type: trojan
+    password: vip
+    skip-cert-verify: true
+    sni: quiz.staging.vidio.com.xyoruzteam.biz.id
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: quiz.staging.vidio.com.xyoruzteam.biz.id
+    udp: true
+    
 proxy-groups:
   - name: MENU-BY-XYRVPN
     type: select
