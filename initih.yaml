@@ -1,0 +1,83 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+    - https://dns.adguard.com/dns-query
+    - https://dns.google/dns-query
+    - tls://dns.adguard.com
+    - tls://dns.google
+proxies:
+
+  - name: trojan
+    server: 104.20.244.135
+    port: 443
+    type: trojan
+    password: vip
+    skip-cert-verify: true
+    sni: quiz.staging.vidio.com.xyoruzteam.biz.id
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: quiz.staging.vidio.com.xyoruzteam.biz.id
+    udp: true
+    
+proxy-groups:
+  - name: GRUP-XYRVPN
+    type: select
+    proxies:
+      - trojan
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - trojan
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - trojan
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - trojan
+rules:
+  - MATCH,GRUP-XYRVPN
