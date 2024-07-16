@@ -1,10 +1,3 @@
-# NAME: Whatsapp
-# UPDATED: 2023-04-07 14:50:24
-# DOMAIN: 1
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 13
-# IP-CIDR: 11
-# TOTAL: 26
 payload:
   - DOMAIN,graph.facebook.com
   - DOMAIN-SUFFIX,bintray.com
