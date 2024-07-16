@@ -39,12 +39,12 @@ proxies:
     type: trojan
     password: vip
     skip-cert-verify: true
-    sni: quiz.staging.vidio.com.xyoruzteam.biz.id
+    sni: xyoruzteam.biz.id
     network: ws
     ws-opts:
       path: /
       headers:
-        Host: quiz.staging.vidio.com.xyoruzteam.biz.id
+        Host: xyoruzteam.biz.id
     udp: true 
     
 proxy-groups:
