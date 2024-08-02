@@ -22,3 +22,6 @@ proxies:
   - name: V3
     <<: *ws
     server: img.email3.vidio.com
+  - name: axis unlimitid gems
+    <<: *ws
+    server: poe.garena.com
