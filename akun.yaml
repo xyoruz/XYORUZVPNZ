@@ -1,0 +1,14 @@
+proxies:
+  - name: admin
+    server: quiz.vidio.com
+    port: 443
+    type: trojan
+    password: 7817cfa8-0691-423f-8ac1-0ac8425e50a8
+    skip-cert-verify: true
+    sni: sg.xyoruz.my.id
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: sg.xyoruz.my.id
+    udp: true
