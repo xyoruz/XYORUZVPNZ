@@ -1,14 +1,16 @@
 proxies:
-  - name: admin
-    server: quiz.vidio.com
+  - name: ID
+    server: ava.game.naver.com
     port: 443
-    type: trojan
-    password: 7817cfa8-0691-423f-8ac1-0ac8425e50a8
+    type: vless
+    uuid: 03ce5f91-ddf0-4ebb-9e5e-b2e480a16353
+    cipher: auto
+    tls: true
     skip-cert-verify: true
-    sni: sg.xyoruz.my.id
+    servername: ava.game.naver.com.xyoruz.my.id
     network: ws
     ws-opts:
-      path: /trojan-ws
+      path: /vless-ws
       headers:
-        Host: sg.xyoruz.my.id
+        Host: ava.game.naver.com.xyoruz.my.id
     udp: true
