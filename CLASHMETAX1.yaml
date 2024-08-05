@@ -1,0 +1,47 @@
+akun: &ws
+    port: 80
+    type: vmess
+    uuid: 4804f14b-c1f8-452d-a6ec-eff1490aeac9
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: hdfy6d3.freelines.net
+    network: ws
+    ws-opts:
+      path: /lRkGCkYS9X5GDNJYMWXN7kCm3lL
+      headers:
+        Host: hdfy6d3.freelines.net
+    udp: true
+proxies:
+  - name: vidio 1
+    <<: *ws
+    server: quiz.vidio.com
+  - name: vidio 2
+    <<: *ws
+    server: img.email3.vidio.com
+  - name: vidio 3
+    <<: *ws
+    server: quiz.int.vidio.com
+  - name: axis Game
+    <<: *ws
+    server: poe.garena.com
+  - name: xcp vip jateng jatim
+    <<: *ws
+    server: 104.17.3.81
+  - name: xcp vip jateng sulteng
+    <<: *ws
+    server: 172.67.73.39
+proxy-groups:
+  - name: Accont grup
+    type: select
+    proxies:
+      - DIRECT
+      - vidio 1
+      - vidio 2
+      - vidio 2
+      - axis Game
+      - xcp vip jateng jatim
+      - xcp vip jateng sulteng
+rules:
+  - MATCH,Accont grup
