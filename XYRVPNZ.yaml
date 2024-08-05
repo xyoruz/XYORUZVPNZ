@@ -34,20 +34,19 @@ dns:
 proxies:
  
   - name: SG
-    server: quiz.vidio.com
-    port: 80
-    type: vmess
-    uuid: 6d468006-811c-4a50-a570-8dc03ff6afd9
-    alterId: 0
+    server: ava.game.naver.com
+    port: 443
+    type: vless
+    uuid: 03ce5f91-ddf0-4ebb-9e5e-b2e480a16353
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: quiz.vidio.com.sg.xyoruz.my.id
+    servername: ava.game.naver.com.xyoruz.my.id
     network: ws
     ws-opts:
-      path: /vmess
+      path: /vless-ws
       headers:
-        Host: quiz.vidio.com.sg.xyoruz.my.id
+        Host: ava.game.naver.com.xyoruz.my.id
     udp: true
     
 proxy-groups:
