@@ -34,19 +34,17 @@ dns:
 proxies:
  
   - name: SG
-    server: ava.game.naver.com
+    server: 104.17.70.206
     port: 443
-    type: vless
-    uuid: 03ce5f91-ddf0-4ebb-9e5e-b2e480a16353
-    cipher: auto
-    tls: true
+    type: trojan
+    password: c0b088c5-7690-4d9e-8910-7d39500cf49e
     skip-cert-verify: true
-    servername: ava.game.naver.com.xyoruz.my.id
+    sni: sg.xyoruz.my.id
     network: ws
     ws-opts:
-      path: /vless-ws
+      path: /trojan-ws
       headers:
-        Host: ava.game.naver.com.xyoruz.my.id
+        Host: sg.xyoruz.my.id
     udp: true
     
 proxy-groups:
